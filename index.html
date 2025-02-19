@@ -2,25 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plugin Wiki</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function toggleMenu(id) {
+            const menu = document.getElementById(id);
+            menu.classList.toggle('hidden');
+        }
+    </script>
 </head>
-<body>
-<header>
-    <nav>
-        <ul>
+<body class="flex h-screen bg-gray-100">
+<!-- Sidebar Navigation -->
+<nav class="w-64 bg-gray-800 text-white p-4 flex flex-col space-y-2">
+    <h2 class="text-lg font-bold">Navigation</h2>
+    <ul>
+        <li><a href="#home" class="block py-2">Home</a></li>
+        <li><a href="#installation" class="block py-2">Installation</a></li>
+        <li><a href="#permissions" class="block py-2">Permissions</a></li>
         <li>
-            <a href="#">Home</a>
+            <button onclick="toggleMenu('joychat-menu')" class="w-full text-left py-2">JoyChat ▼</button>
+            <ul id="joychat-menu" class="hidden pl-4 space-y-2">
+                <li><a href="#joychat-overview" class="block py-1">Overview</a></li>
+                <li><a href="#joychat-settings" class="block py-1">Settings</a></li>
+                <li><a href="#joychat-commands" class="block py-1">Commands</a></li>
+            </ul>
         </li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <h1> Hi there</h1>
-</main>
+    </ul>
+</nav>
 
-<footer>
-    <p> &copy; CozyLeprechaun94 2025</p>
-</footer>
+<!-- Main Content -->
+<main class="flex-1 p-6">
+    <h1 class="text-2xl font-bold">Welcome to Plugin Wiki</h1>
+    <section id="home" class="mt-4">
+        <h2 class="text-xl font-semibold">Home</h2>
+        <p>Welcome to the official wiki for the plugin!</p>
+    </section>
+    <section id="installation" class="mt-4">
+        <h2 class="text-xl font-semibold">Installation</h2>
+        <p>Steps on how to install the plugin...</p>
+    </section>
+    <section id="permissions" class="mt-4">
+        <h2 class="text-xl font-semibold">Permissions</h2>
+        <p>List of permissions required for the plugin...</p>
+    </section>
+    <section id="joychat-overview" class="mt-4">
+        <h2 class="text-xl font-semibold">JoyChat Overview</h2>
+        <p>Information about JoyChat...</p>
+    </section>
+    <section id="joychat-settings" class="mt-4">
+        <h2 class="text-xl font-semibold">JoyChat Settings</h2>
+        <p>How to configure JoyChat...</p>
+    </section>
+    <section id="joychat-commands" class="mt-4">
+        <h2 class="text-xl font-semibold">JoyChat Commands</h2>
+        <p>List of commands for JoyChat...</p>
+    </section>
+</main>
 </body>
 </html>
